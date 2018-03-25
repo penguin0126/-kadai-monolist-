@@ -14,7 +14,7 @@ class User < ApplicationRecord
   def want(item)
     self.wants.find_or_create_by(item_id: item.id)
   end
-n
+  
   def unwant(item)
     want = self.wants.find_by(item_id: item.id)
     want.destroy if want
